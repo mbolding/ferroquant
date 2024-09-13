@@ -1,8 +1,10 @@
 function analyzeROIsAcrossStackTI(parentFolder)
     % Load the DICOM stack
     if nargin < 1 || isempty(parentFolder)
+        % If no parent folder is provided, call loadDicomStack without arguments
         [imageStack, ~, inversionTimes] = loadDicomStack();
     else
+        % If parent folder is provided, pass it to loadDicomStack
         [imageStack, ~, inversionTimes] = loadDicomStack(parentFolder);
     end
     
@@ -15,29 +17,37 @@ function analyzeROIsAcrossStackTI(parentFolder)
     title('Click centers for ROIs (20px radius) on MIP. Press Enter when done.');
     hold on;
     
+    % Get dimensions of the image stack
     [height, width, numSlices] = size(imageStack);
+    % Create meshgrid for ROI mask creation
     [XX, YY] = meshgrid(1:width, 1:height);
     
+    % Initialize variables for ROI selection
     roiCenters = [];
     masks = {};
     colors = ['r', 'g', 'b', 'c', 'm', 'y'];  % Colors for different ROIs
     
+    % Loop to allow user to select multiple ROIs
     while true
         [x, y, button] = ginput(1);
         if isempty(button) || button ~= 1  % Check if Enter was pressed or non-left click
             break;
         end
         
+        % Store ROI center
         roiCenters = [roiCenters; x, y];
+        % Create circular mask for ROI
         mask = (XX - x).^2 + (YY - y).^2 <= 20^2;
         masks{end+1} = mask;
         
-        colorIndex = mod(length(roiCenters) - 1, length(colors)) + 1;
+        % Draw circle on the image to visualize ROI
+        colorIndex = mod(size(roiCenters,1) - 1, length(colors)) + 1;
         viscircles([x, y], 20, 'Color', colors(colorIndex), 'LineWidth', 1);
     end
     
     hold off;
     
+    % Check if at least one ROI was selected
     if isempty(roiCenters)
         error('No ROIs selected. Please run the function again and select at least one ROI.');
     end
@@ -63,6 +73,7 @@ function analyzeROIsAcrossStackTI(parentFolder)
     end
     hold off;
     
+    % Set plot labels and title
     xlabel('Inversion Time (ms)');
     ylabel('Average Intensity in ROI');
     title('ROI Average Intensities Across Inversion Times');
