@@ -1,7 +1,3 @@
-mbolding: @workspace write a README.md for these files
-
-Workspace: # DICOM Analysis Tools
-
 This repository contains MATLAB scripts for analyzing and visualizing DICOM image stacks. The primary functionality includes loading DICOM images, selecting regions of interest (ROIs), and plotting average intensities across different inversion times.
 
 
@@ -13,7 +9,7 @@ This repository contains MATLAB scripts for analyzing and visualizing DICOM imag
 - **`loadDicomStack.m`**: Loads a stack of DICOM images from a specified folder.
 - **`viewDicomImage.m`**: Displays a single DICOM image.
 
-### DICOM Folders
+### Example data DICOM Folders
 
 The folders `se_ir0050ms_stanford_4/` to `se_ir2500ms_stanford_14/` contain DICOM images with different inversion times.
 
@@ -60,6 +56,5 @@ This project is licensed under the MIT License. See the LICENSE file for details
 
 Special thanks to the contributors and the MATLAB community for their support and resources.
 
----
 
-For any issues or contributions, please open an issue or submit a pull request on the repository.
+---
