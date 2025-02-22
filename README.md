@@ -3,7 +3,7 @@ This repository contains MATLAB scripts for analyzing and visualizing DICOM imag
 
 ### Main Scripts
 
-- **`analyzeROIsAcrossStackTI.m`**: This script allows users to load a DICOM stack, select multiple ROIs on a Maximum Intensity Projection (MIP) image, and plot the average intensities within each ROI across different inversion times.
+- **`analyzeROIsAcrossStackTI.m`**: This script allows users to load a DICOM stack, select multiple ROIs on a Maximum Intensity Projection (MIP) image, and plot the average intensities within each ROI across different inversion times. Run from directory containing the dicom directories. 
 - **`displayDicomMosaic.m`**: Displays a mosaic of DICOM images from a specified folder.
 - **`displayDicomTags.m`**: Displays DICOM tags for a given DICOM file.
 - **`loadDicomStack.m`**: Loads a stack of DICOM images from a specified folder.
