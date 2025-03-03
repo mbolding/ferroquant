@@ -43,6 +43,10 @@ The folders `se_ir0050ms_stanford_4/` to `se_ir2500ms_stanford_14/` contain DICO
      viewDicomImage('path/to/dicom/file.dcm');
      ```
 
+## Example results
+
+![example results](images/example_results.png)
+
 ## Dependencies
 
 - MATLAB
