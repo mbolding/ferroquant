@@ -1,4 +1,4 @@
-This repository contains MATLAB scripts for analyzing and visualizing DICOM image stacks. The primary functionality includes loading DICOM images, selecting regions of interest (ROIs), and plotting average intensities across different inversion times.
+This repository contains very simple MATLAB scripts for analyzing and visualizing DICOM image stacks. The primary functionality includes loading DICOM images, selecting regions of interest (ROIs), and plotting average intensities across different inversion times.
 
 
 ### Main Scripts
@@ -16,7 +16,7 @@ The folders `se_ir0050ms_stanford_4/` to `se_ir2500ms_stanford_14/` contain DICO
 ## Usage
 
 1. **Load and Analyze DICOM Stack**:
-   - Run the `analyzeROIsAcrossStackTI.m` script to load a DICOM stack, select ROIs, and plot average intensities.
+   - Run the `analyzeROIsAcrossStackTI.m` script to load a DICOM stack, select ROIs, and plot average intensities. See example results below. 
    - Example:
      ```matlab
      analyzeROIsAcrossStackTI('path/to/dicom/folder');
