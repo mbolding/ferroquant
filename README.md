@@ -54,7 +54,7 @@ The folders `se_ir0050ms_stanford_4/` to `se_ir2500ms_stanford_14/` contain DICO
 
 ## License
 
-This project is licensed under the MIT License. See the LICENSE file for details.
+This project is licensed under the MIT License. 
 
 ## Acknowledgments
 
